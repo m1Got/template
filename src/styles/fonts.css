@@ -1,0 +1,8 @@
+@font-face {
+	font-family: PatsySans;
+	font-display: swap;
+	src: local("PatsySans"), url("../fonts/PatsySans.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+}
+

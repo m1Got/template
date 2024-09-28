@@ -1,0 +1,13 @@
+dist
+node_modules
+package-lock.json
+
+resources
+
+DS_Store
+Thumbs.db
+*.log
+.idea
+.vscode
+*.sublime-project
+*.sublime-workspace

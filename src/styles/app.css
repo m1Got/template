@@ -1,0 +1,21 @@
+/* @import url("fonts"); */
+/* @import url("icons"); */
+@import url("reset");
+
+/* @tailwind base; */
+/* @tailwind components; */
+@tailwind utilities;
+
+body {
+  font-family: Roboto;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  > main {
+    flex: 1 1 auto;
+  }
+}

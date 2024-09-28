@@ -1,0 +1,49 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTMX + Tailwind + Vite Project</title>
+
+    <script defer type="module" src="scripts/main.ts"></script>
+  </head>
+
+  <body>
+    <div class="wrapper">
+      <div
+        hx-get="layouts/header.htm"
+        hx-trigger="load"
+        hx-swap="outerHTML"
+      ></div>
+
+      <main>
+        HOME
+        <!-- <img class="w-full" src="images/01.png" alt="" loading="lazy" /> -->
+        <div x-data>
+          <h1>
+            Welcome to the
+            <span x-text="$store.shop.name">shop-name</span>
+          </h1>
+          <div>
+            <button>cc</button>
+            Here you can buy:
+            <ul>
+              <template x-for="product in $store.shop.products">
+                <li x-text="product"></li>
+              </template>
+            </ul>
+          </div>
+        </div>
+        <i class="icon-check"></i>
+
+        <div id="products"></div>
+        <div id="news"></div>
+      </main>
+
+      <div
+        hx-get="layouts/footer.htm"
+        hx-trigger="load"
+        hx-swap="outerHTML"
+      ></div>
+    </div>
+  </body>
+</html>
