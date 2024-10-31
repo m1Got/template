@@ -1,4 +1,92 @@
 @font-face {
+	font-family: Cornero;
+	font-display: swap;
+	src: local("Cornero"), url("../fonts/Cornero.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: EuclidCircularA;
+	font-display: swap;
+	src: local("EuclidCircularA"), url("../fonts/EuclidCircularA-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: EuclidCircularA;
+	font-display: swap;
+	src: local("EuclidCircularA"), url("../fonts/EuclidCircularA-BoldItalic.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: EuclidCircularA;
+	font-display: swap;
+	src: local("EuclidCircularA"), url("../fonts/EuclidCircularA-Italic.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: EuclidCircularA;
+	font-display: swap;
+	src: local("EuclidCircularA"), url("../fonts/EuclidCircularA-Light.woff2") format("woff2");
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: EuclidCircularA;
+	font-display: swap;
+	src: local("EuclidCircularA"), url("../fonts/EuclidCircularA-LightItalic.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: EuclidCircularA;
+	font-display: swap;
+	src: local("EuclidCircularA"), url("../fonts/EuclidCircularA-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: EuclidCircularA;
+	font-display: swap;
+	src: local("EuclidCircularA"), url("../fonts/EuclidCircularA-MediumItalic.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: EuclidCircularA;
+	font-display: swap;
+	src: local("EuclidCircularA"), url("../fonts/EuclidCircularA-Regular.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: EuclidCircularA;
+	font-display: swap;
+	src: local("EuclidCircularA"), url("../fonts/EuclidCircularA-SemiBold.woff2") format("woff2");
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: EuclidCircularA;
+	font-display: swap;
+	src: local("EuclidCircularA"), url("../fonts/EuclidCircularA-SemiBoldItalic.woff2") format("woff2");
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
 	font-family: PatsySans;
 	font-display: swap;
 	src: local("PatsySans"), url("../fonts/PatsySans.woff2") format("woff2");

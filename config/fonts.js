@@ -10,7 +10,7 @@ const fontsDistFolder = `${paths.public}/fonts/`;
 const fontStyle = ({ family, name, ext, weight }) => `@font-face {
 	font-family: ${family};
 	font-display: swap;
-	src: local("${family}"), url("../fonts/${name}.${ext}") format("${ext}");
+	src: url("../fonts/${name}.${ext}") format("${ext}");
 	font-weight: ${weight};
 	font-style: normal;
 }\n\n`;

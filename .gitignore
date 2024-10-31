@@ -3,6 +3,14 @@ node_modules
 package-lock.json
 
 # resources
+resources/fonts/*.ttf
+resources/fonts/*.otf
+resources/icons/*.svg
+
+public/fonts/*.woff
+public/fonts/*.woff2
+public/icons/*.svg
+
 
 DS_Store
 Thumbs.db
