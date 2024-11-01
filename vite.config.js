@@ -1,13 +1,9 @@
-import { defineConfig, normalizePath } from "vite";
+import { defineConfig } from "vite";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
-import { viteStaticCopy } from "vite-plugin-static-copy";
-import { preact } from "@preact/preset-vite";
+import injectHTML from "vite-plugin-html-inject";
 
 import { filesWithExt, paths, getPages } from "./config/common.js";
 
-/**
- * @type {import('vite-plugin-static-copy').Target}
- */
 export default defineConfig({
   root: "src",
   publicDir: "../public",
@@ -15,21 +11,24 @@ export default defineConfig({
   build: {
     outDir: "../dist",
     emptyOutDir: true,
-    cssMinify: false,
+    cssCodeSplit: false,
+    cssMinify: "esbuild",
+    minify: false,
+    modulePreload: { polyfill: false },
+    terserOptions: { compress: false, mangle: false },
     rollupOptions: {
       input: { ...getPages(filesWithExt(paths.src, ".html")) },
+      output: {
+        chunkFileNames: "assets/[name].js",
+        assetFileNames: "assets/[name].[ext]",
+      },
     },
   },
   plugins: [
-    preact({}),
-    ViteImageOptimizer({ includePublic: true }),
-    viteStaticCopy({
-      targets: [
-        {
-          src: normalizePath(`${paths.src}/layouts/*.htm`),
-          dest: normalizePath(`${paths.dist}/layouts/`),
-        },
-      ],
+    ViteImageOptimizer({
+      includePublic: true,
+      test: /\.(jpe?g|png|gif|tiff|webp|avif)$/i,
     }),
+    injectHTML({ tagName: "include" }),
   ],
 });

@@ -1,4 +1,3 @@
-/* @import url("fonts"); */
 /* @import url("icons"); */
 @import url("reset");
 
@@ -7,7 +6,7 @@
 @tailwind utilities;
 
 body {
-  font-family: Roboto;
+  font-family: "Conero", sans-serif;
 }
 
 .wrapper {

@@ -3,33 +3,21 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build && node config/common cleanup",
-    "preview": "vite preview",
+    "build": "vite build && node config/common cleanup && npm run format",
     "icons": "node config/icons",
-    "fonts": "node config/fonts fonts"
-  },
-  "dependencies": {
-    "alpinejs": "^3.14.1",
-    "htmx.org": "^1.9.12"
+    "format": "npx prettier dist --write --ignore-path=/node_modules"
   },
   "devDependencies": {
-    "@preact/preset-vite": "^2.9.0",
-    "@types/alpinejs": "^3.13.10",
-    "@types/node": "^22.3.0",
     "autoprefixer": "^10.4.19",
     "cheerio": "^1.0.0-rc.12",
-    "fontmin": "^1.1.0",
     "postcss": "^8.4.39",
     "prettier-plugin-tailwindcss": "^0.6.6",
-    "sharp": "^0.33.4",
     "svgo": "^3.3.2",
     "svgtofont": "^5.0.2",
     "tailwindcss": "^3.4.6",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.5.4",
     "vite": "^5.1.2",
-    "vite-plugin-image-optimizer": "^1.1.8",
-    "vite-plugin-static-copy": "^1.0.6"
+    "vite-plugin-html-inject": "^1.1.2",
+    "vite-plugin-image-optimizer": "^1.1.8"
   },
   "prettier": {
     "plugins": [

@@ -1,22 +1,12 @@
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HTMX + Tailwind + Vite Project</title>
-
-    <script defer type="module" src="scripts/main.ts"></script>
-  </head>
-
+  <include src="layouts/head.htm" />
   <body>
     <div class="wrapper">
-      <div hx-get="layouts/header.htm" hx-trigger="load" hx-swap="outerHTML"></div>
-
+      <include src="layouts/header.htm" />
       <main>
-        ABOUT
-        <i class="icon-02"></i>
+        <div class="p-2">ABOUT</div>
       </main>
-
-      <div hx-get="layouts/footer.htm" hx-trigger="load" hx-swap="outerHTML"></div>
+      <include src="layouts/footer.htm" />
     </div>
   </body>
 </html>
