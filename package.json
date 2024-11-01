@@ -3,17 +3,15 @@
   "private": true,
   "scripts": {
     "dev": "vite",
-    "build": "vite build && node config/common cleanup && npm run format",
+    "build": "vite build && npm run format",
     "icons": "node config/icons",
     "format": "npx prettier dist --write --ignore-path=/node_modules"
   },
   "devDependencies": {
+    "@types/node": "^22.8.6",
     "autoprefixer": "^10.4.19",
-    "cheerio": "^1.0.0-rc.12",
     "postcss": "^8.4.39",
     "prettier-plugin-tailwindcss": "^0.6.6",
-    "svgo": "^3.3.2",
-    "svgtofont": "^5.0.2",
     "tailwindcss": "^3.4.6",
     "vite": "^5.1.2",
     "vite-plugin-html-inject": "^1.1.2",
