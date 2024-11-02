@@ -17,7 +17,13 @@ export default defineConfig({
     modulePreload: { polyfill: false },
     terserOptions: { compress: false, mangle: false },
     rollupOptions: {
-      input: { ...getPages(filesWithExt("src", ".html")) },
+      input: {
+        ...getPages(
+          fs
+            .readdirSync("src")
+            .filter((file) => path.extname(file) === ".html"),
+        ),
+      },
       output: {
         chunkFileNames: "assets/[name].js",
         assetFileNames: "assets/[name].[ext]",
@@ -38,13 +44,4 @@ function getPages(pages) {
     acc[page] = new URL(`src/${page}`, import.meta.url).pathname;
     return acc;
   }, {});
-}
-
-function filesWithExt(dir, ext) {
-  try {
-    const files = fs.readdirSync(dir);
-    return files.filter((file) => path.extname(file) === ext);
-  } catch (error) {
-    console.log(error);
-  }
 }
