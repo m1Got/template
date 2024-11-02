@@ -1,3 +1,4 @@
+@import url("vars");
 @import url("reset");
 @import url("common");
 
@@ -6,7 +7,7 @@
 @tailwind utilities;
 
 body {
-  font-family: "Conero", sans-serif;
+  font-family: var(--base-ff);
 }
 
 .wrapper {

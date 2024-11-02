@@ -1,13 +1,14 @@
+import fs from "node:fs";
+import path from "node:path";
 import { defineConfig } from "vite";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 import injectHTML from "vite-plugin-html-inject";
-import fs from "node:fs";
-import path from "node:path";
 
 export default defineConfig({
   root: "src",
   publicDir: "../public",
   appType: "mpa",
+  server: { host: true, watch: { usePolling: true } },
   build: {
     outDir: "../dist",
     emptyOutDir: true,
