@@ -4,7 +4,6 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && npm run format",
-    "icons": "node config/icons",
     "format": "npx prettier dist --write --ignore-path=/node_modules"
   },
   "devDependencies": {
