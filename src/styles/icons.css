@@ -1,0 +1,19 @@
+@font-face {
+  font-family: "icons";
+  src:
+    url("../icons/icons.woff2") format("woff2"),
+    url("../icons/icons.woff") format("woff");
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+  font-family: "icons" !important;
+  font-style: normal;
+  font-size: 1rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-bell:before {
+  content: "\ea01";
+}

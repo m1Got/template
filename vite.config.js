@@ -1,8 +1,8 @@
-import fs from "node:fs";
-import path from "node:path";
 import { defineConfig } from "vite";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
 import injectHTML from "vite-plugin-html-inject";
+
+import { filesWithExt, getPages, paths } from "./config/common";
 
 export default defineConfig({
   root: "src",
@@ -19,11 +19,7 @@ export default defineConfig({
     terserOptions: { compress: false, mangle: false },
     rollupOptions: {
       input: {
-        ...getPages(
-          fs
-            .readdirSync("src")
-            .filter((file) => path.extname(file) === ".html"),
-        ),
+        ...getPages(filesWithExt(paths.src, ".html")),
       },
       output: {
         chunkFileNames: "assets/[name].js",
@@ -39,10 +35,3 @@ export default defineConfig({
     injectHTML({ tagName: "include" }),
   ],
 });
-
-function getPages(pages) {
-  return pages.reduce((acc, page) => {
-    acc[page] = new URL(`src/${page}`, import.meta.url).pathname;
-    return acc;
-  }, {});
-}
